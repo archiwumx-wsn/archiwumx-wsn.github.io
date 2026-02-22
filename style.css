@@ -16,10 +16,19 @@ h1, h2 {
 }
 
 header {
-    background-color: #132635;
-    padding: 30px 20px;
+    position: relative;
+    padding: 80px 20px;
     text-align: center;
-    border-bottom: 2px solid #1f3a50;
+    color: white;
+    overflow: hidden;
+
+    background:
+        linear-gradient(rgba(10,25,40,0.85), rgba(10,25,40,0.95)),
+        url("assets/images/tło.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 header h1 {
