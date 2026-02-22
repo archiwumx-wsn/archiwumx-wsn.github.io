@@ -110,22 +110,32 @@ window.addEventListener("scroll", () => {
 </script>
 
 <script>
-const loopNumber = document.querySelector(".number-loop");
+const digit = document.getElementById("loopDigit");
 
-let state = false;
+let current = 8;
 
-setInterval(() => {
-    loopNumber.style.opacity = "0.3";
-    loopNumber.style.transform = "translateY(-2px)";
-    
+function animateDigit() {
+
+    // faza zaniku + podniesienia
+    digit.style.opacity = "0.2";
+    digit.style.transform = "translateY(-6px)";
+
     setTimeout(() => {
-        state = !state;
-        loopNumber.textContent = state ? "9" : "8";
-        loopNumber.style.opacity = "1";
-        loopNumber.style.transform = "translateY(0)";
-    }, 150);
 
-}, 4000);
+        // ZMIANA CYFRY
+        current = current === 8 ? 9 : 8;
+        digit.textContent = current;
+
+        // powrót
+        digit.style.transform = "translateY(0)";
+        digit.style.opacity = "1";
+
+    }, 250);
+
+}
+
+// co 5 sekund
+setInterval(animateDigit, 5000);
 </script>
 
 </body>
