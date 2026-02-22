@@ -149,3 +149,58 @@ footer {
         margin: 0 10px;
     }
 }
+
+/* ============================= */
+/*         TOP TABS MENU        */
+/* ============================= */
+
+.top-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 18px;
+    background: var(--navy);
+}
+
+.top-tabs a {
+    position: relative;
+    padding: 14px 26px;
+    text-decoration: none;
+    color: #222;
+    background: linear-gradient(#f2f2f2, #e4e4e4);
+    border-radius: 14px 14px 6px 6px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 
+        0 3px 6px rgba(0,0,0,0.25),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+    transition: all 0.25s ease;
+}
+
+/* Efekt światła */
+.top-tabs a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px 14px 6px 6px;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0.6),
+        rgba(255,255,255,0.15),
+        rgba(255,255,255,0)
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover */
+.top-tabs a:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 6px 12px rgba(0,0,0,0.35),
+        inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+.top-tabs a:hover::before {
+    opacity: 1;
+}
