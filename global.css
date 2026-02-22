@@ -1,1 +1,151 @@
-a
+/* ============================= */
+/*        GLOBAL THEME          */
+/* ============================= */
+
+/* ====== ZMIENNE KOLORÓW ====== */
+:root {
+    --navy: #0a1a2a;
+    --navy-dark: #07121d;
+    --black: #000000;
+    --blue-light: #4da6ff;
+    --blue-soft: #2f6fa3;
+    --gray-light: #d9e1e8;
+}
+
+/* ====== RESET ====== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--navy);
+    color: var(--gray-light);
+}
+
+/* ====== HEADER ====== */
+header {
+    background: var(--navy);
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 1px solid var(--blue-soft);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    color: var(--blue-light);
+    letter-spacing: 1px;
+}
+
+header p {
+    margin-top: 10px;
+    color: var(--gray-light);
+    opacity: 0.8;
+}
+
+/* ====== NAV ====== */
+nav {
+    background: var(--navy-dark);
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid var(--blue-soft);
+}
+
+nav a {
+    color: var(--gray-light);
+    text-decoration: none;
+    margin: 0 18px;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--blue-light);
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--blue-light);
+    transition: 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ====== CONTAINER ====== */
+.container {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+/* ====== KARTY ====== */
+.card {
+    background: var(--navy-dark);
+    border: 1px solid var(--blue-soft);
+    padding: 28px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    border-color: var(--blue-light);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: var(--blue-light);
+}
+
+/* ====== REVEAL ====== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ====== SUBTELNA PĘTLA CYFRY ====== */
+#loopDigit {
+    display: inline-block;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* ====== FOOTER ====== */
+footer {
+    text-align: center;
+    padding: 30px;
+    background: var(--black);
+    color: var(--gray-light);
+    border-top: 1px solid var(--blue-soft);
+}
+
+/* ====== MOBILE ====== */
+@media (max-width: 768px) {
+
+    header {
+        padding: 60px 15px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        margin: 0 10px;
+    }
+}
