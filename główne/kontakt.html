@@ -109,5 +109,24 @@ window.addEventListener("scroll", () => {
 });
 </script>
 
+<script>
+const loopNumber = document.querySelector(".number-loop");
+
+let state = false;
+
+setInterval(() => {
+    loopNumber.style.opacity = "0.3";
+    loopNumber.style.transform = "translateY(-2px)";
+    
+    setTimeout(() => {
+        state = !state;
+        loopNumber.textContent = state ? "9" : "8";
+        loopNumber.style.opacity = "1";
+        loopNumber.style.transform = "translateY(0)";
+    }, 150);
+
+}, 4000);
+</script>
+
 </body>
 </html>
