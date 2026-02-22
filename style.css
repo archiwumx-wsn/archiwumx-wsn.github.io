@@ -171,3 +171,8 @@ footer {
         color: #b3d9ff;
     }
 }
+
+#loopDigit {
+    display: inline-block;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
