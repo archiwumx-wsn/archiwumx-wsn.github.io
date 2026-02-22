@@ -42,6 +42,19 @@ header p {
     color: #9fb3c8;
 }
 
+header {
+    animation: slowZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes slowZoom {
+    from {
+        background-size: 100%;
+    }
+    to {
+        background-size: 110%;
+    }
+}
+
 nav {
     background-color: #101f2c;
     padding: 10px;
