@@ -73,6 +73,39 @@ nav a:hover {
     }
 }
 
+.fade-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+}
+
+.fade-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: #ccc;
+    margin: 0 15px;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #4db8ff;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
 .info-box {
     background: rgba(20, 40, 60, 0.6);
     backdrop-filter: blur(10px);
