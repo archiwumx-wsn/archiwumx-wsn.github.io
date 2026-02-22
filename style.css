@@ -141,3 +141,56 @@ footer {
     color: #7f96a8;
     border-top: 1px solid #1f3a50;
 }
+
+.glitch-number {
+    position: relative;
+    display: inline-block;
+    color: #9fd3ff;
+    animation: glitch 1.5s infinite;
+}
+
+.glitch-number::before,
+.glitch-number::after {
+    content: "8";
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0.7;
+}
+
+.glitch-number::before {
+    color: #ff3c3c;
+    animation: glitchTop 1.5s infinite;
+}
+
+.glitch-number::after {
+    color: #00f0ff;
+    animation: glitchBottom 1.5s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-1px, 1px); }
+    40% { transform: translate(1px, -1px); }
+    60% { transform: translate(-1px, 0); }
+    80% { transform: translate(1px, 1px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes glitchTop {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, -1px); }
+    40% { transform: translate(2px, 1px); }
+    60% { transform: translate(-1px, 2px); }
+    80% { transform: translate(1px, -2px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes glitchBottom {
+    0% { transform: translate(0); }
+    20% { transform: translate(2px, 1px); }
+    40% { transform: translate(-2px, -1px); }
+    60% { transform: translate(1px, -2px); }
+    80% { transform: translate(-1px, 2px); }
+    100% { transform: translate(0); }
+}
