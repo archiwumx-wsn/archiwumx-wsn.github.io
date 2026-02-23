@@ -71,5 +71,17 @@ function glitchAndChange() {
 setInterval(glitchAndChange, Math.random() * (20000 - 10000) + 10000); // Czas losowy między 10s a 20s
 </script>
 
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const reveals = document.querySelectorAll(".reveal");
+
+    reveals.forEach((el, index) => {
+        setTimeout(() => {
+            el.classList.add("active");
+        }, index * 150);
+    });
+});
+</script>
+    
 </body>
 </html>
