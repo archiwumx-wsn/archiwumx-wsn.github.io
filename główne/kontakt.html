@@ -4,82 +4,90 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wydział Spraw Niewyjaśnionych</title>
- <link rel="stylesheet" href="../global.css">
+<link rel="stylesheet" href="../global.css">
 
 <style>
-body{
-    margin:0;
-    font-family:'Segoe UI',sans-serif;
-    background:#0b1620;
-    color:#e6edf3;
-}
+        /* Reset */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #0b1620;
+            color: #e6edf3;
+        }
 
-/* HEADER */
-header{
-    padding:80px 20px;
-    text-align:center;
-    color:white;
-    background:linear-gradient(rgba(10,25,40,.85),rgba(10,25,40,.95)),
-    url("assets/images/header-bg.jpg");
-    background-size:cover;
-    background-position:center;
-}
+        header {
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(rgba(10, 25, 40, 0.85), rgba(10, 25, 40, 0.95)), url("assets/images/header-bg.jpg");
+            background-size: cover;
+            background-position: center;
+            animation: slowZoom 20s ease-in-out infinite alternate;
+        }
 
-header h1{
-    margin:0;
-    font-size:36px;
-    color:#9fd3ff;
-}
+        @keyframes slowZoom {
+            from { background-size: 100%; }
+            to { background-size: 110%; }
+        }
 
-/* NAV */
-nav{
-    background:#0f1f2c;
-    padding:12px;
-    text-align:center;
-    border-bottom:1px solid #1e3a4d;
-}
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #9fd3ff;
+            text-shadow: 0 0 15px rgba(0, 150, 255, 0.4);
+        }
 
-nav a{
-    color:#c7d6e4;
-    text-decoration:none;
-    margin:0 15px;
-}
+        /* Navigation */
+        nav {
+            background: #0f1f2c;
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #1e3a4d;
+        }
 
-/* CONTAINER */
-.container{
-    max-width:1000px;
-    margin:50px auto;
-    padding:0 20px;
-}
+        nav a {
+            color: #c7d6e4;
+            text-decoration: none;
+            margin: 0 15px;
+            position: relative;
+        }
 
-/* CARD */
-.card{
-    background:rgba(20,40,60,.6);
-    border:1px solid rgba(255,255,255,.08);
-    padding:25px;
-    border-radius:14px;
-    margin-bottom:40px;
-}
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
 
-.card h2{
-    color:#9fd3ff;
-    margin-top:0;
-}
+        /* Card */
+        .card {
+            background: rgba(20, 40, 60, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 14px;
+            margin-bottom: 40px;
+        }
 
-/* STOP UKRYWANIU TREŚCI */
-.reveal{
-    opacity:1 !important;
-    transform:none !important;
-}
+        .card h2 {
+            color: #9fd3ff;
+            margin-top: 0;
+        }
 
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:30px;
-    background:#0c161f;
-    color:#7f96a8;
-}
-</style>
+        /* Looping Number */
+        .number-loop {
+            display: inline-block;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #0c161f;
+            color: #7f96a8;
+            border-top: 1px solid #1f3a50;
+        }
+    </style>
 </head>
 
 <body>
@@ -132,25 +140,42 @@ footer{
 <p><strong>Email:</strong> rzecznikkgp@policja.gov.pl</p>
 </section>
 
-<section class="card">
-<h2>Dane Siedziby</h2>
-<p><strong>Komenda Główna Policji</strong></p>
-<p>ul. Puławska 148/150, 02-624 Warszawa</p>
-<p><strong>NIP:</strong> 5213172762</p>
-<p><strong>Centrala:</strong> (48) 77 181 80</p>
-<p><strong>Skargi i wnioski:</strong> (49) 78 181 40</p>
-</section>
-
-<section class="card">
-<h2>Dostępność i Komunikacja</h2>
-<p>Obsługa w języku migowym po wcześniejszym zgłoszeniu.</p>
-</section>
-
+<div class="container">
+    <section class="card">
+        <h2>Dane Siedziby</h2>
+        <p><strong>Komenda Główna Policji</strong></p>
+        <p>ul. Puławska 148/150, 02-624 Warszawa</p>
+        <p><strong>NIP:</strong> 5213172762</p>
+        <p><strong>Centrala:</strong> (48) 77 181 80</p>
+        <p><strong>Skargi i wnioski:</strong> (<span id="loopDigit" class="number-loop">48</span>) 78 181 40</p>
+    </section>
 </div>
 
 <footer>
-© 2026 Wydział Spraw Niewyjaśnionych — Biuro Kryminalne KGP
+    © 2026 Wydział Spraw Niewyjaśnionych — Biuro Kryminalne KGP
 </footer>
+
+<script>
+// Funkcja zmiany numeru (48 ↔ 49)
+const loopDigit = document.getElementById("loopDigit");
+let state = true;
+
+function changeDigit() {
+    loopDigit.style.opacity = "0";
+    loopDigit.style.transform = "translateY(-3px)"; // Efekt przesunięcia cyfry
+
+    setTimeout(() => {
+        // Przełączenie numeru
+        loopDigit.textContent = state ? "49" : "48";
+        loopDigit.style.opacity = "1";
+        loopDigit.style.transform = "translateY(0)";
+        state = !state;
+    }, 200);
+}
+
+// Co 10-20 sekund zmienia numer
+setInterval(changeDigit, Math.random() * (20000 - 10000) + 10000); // Losowy czas 10-20 sekund
+</script>
 
 </body>
 </html>
