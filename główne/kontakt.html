@@ -95,7 +95,29 @@
     © 2026 Wydział Spraw Niewyjaśnionych — Biuro Kryminalne KGP
 </footer>
 
+<script>
+    // Zmieniamy cyfrę co 10-20 sekund
+const loopDigit = document.getElementById("loopDigit");
 
+let isEight = true; // Używamy do kontrolowania stanu (czy to 8 czy 9)
+
+function glitchAndChange() {
+    loopDigit.style.animation = 'glitchEffect 1s ease-out infinite';  // Zastosuj efekt glitcha
+
+    setTimeout(() => {
+        // Zmieniamy cyfrę na 9
+        loopDigit.textContent = isEight ? '9' : '8';
+        loopDigit.style.animation = 'none'; // Resetujemy animację
+        loopDigit.style.animation = 'glitchEffect 1s ease-out infinite'; // Ponownie włączamy glitch
+
+        // Przełączamy stan na kolejną cyfrę
+        isEight = !isEight;
+    }, 1000); // Pojawi się po 1 sekundzie (po glitchu)
+}
+
+// Ustawiamy interwał na 10-20 sekund (można dostosować)
+setInterval(glitchAndChange, Math.random() * (20000 - 10000) + 10000); // Czas losowy między 10s a 20s
+</script>
 
 </body>
 </html>
