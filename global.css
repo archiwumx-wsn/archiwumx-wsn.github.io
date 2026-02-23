@@ -204,3 +204,27 @@ footer {
 .top-tabs a:hover::before {
     opacity: 1;
 }
+
+/* ====== Glitch i zmiana cyfry ====== */
+#loopDigit {
+    display: inline-block;
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@keyframes glitchEffect {
+    0% { opacity: 1; transform: translateX(0); }
+    20% { opacity: 0.2; transform: translateX(-3px); }
+    40% { opacity: 0.5; transform: translateX(3px); }
+    60% { opacity: 0.3; transform: translateX(-3px); }
+    80% { opacity: 0.5; transform: translateX(3px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes changeToNine {
+    0% { content: "8"; }
+    50% { content: "9"; }
+    100% { content: "8"; }
+}
