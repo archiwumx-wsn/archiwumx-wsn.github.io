@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wydział Spraw Niewyjaśnionych</title>
+ <link rel="stylesheet" href="../global.css">
 
 <style>
-/* ====== RESET ====== */
 body{
     margin:0;
     font-family:'Segoe UI',sans-serif;
@@ -14,7 +14,7 @@ body{
     color:#e6edf3;
 }
 
-/* ====== HEADER ====== */
+/* HEADER */
 header{
     padding:80px 20px;
     text-align:center;
@@ -23,24 +23,15 @@ header{
     url("assets/images/header-bg.jpg");
     background-size:cover;
     background-position:center;
-    animation:slowZoom 20s ease-in-out infinite alternate;
-}
-
-@keyframes slowZoom{
-    from{background-size:100%;}
-    to{background-size:110%;}
 }
 
 header h1{
     margin:0;
     font-size:36px;
     color:#9fd3ff;
-    text-shadow:0 0 15px rgba(0,150,255,.4);
 }
 
-header p{margin-top:10px;color:#c0d4e8;}
-
-/* ====== NAV ====== */
+/* NAV */
 nav{
     background:#0f1f2c;
     padding:12px;
@@ -52,43 +43,22 @@ nav a{
     color:#c7d6e4;
     text-decoration:none;
     margin:0 15px;
-    position:relative;
 }
 
-nav a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-5px;
-    width:0;
-    height:2px;
-    background:#4db8ff;
-    transition:.3s;
-}
-
-nav a:hover::after{width:100%;}
-
-/* ====== CONTAINER ====== */
+/* CONTAINER */
 .container{
     max-width:1000px;
     margin:50px auto;
     padding:0 20px;
 }
 
-/* ====== CARD ====== */
+/* CARD */
 .card{
     background:rgba(20,40,60,.6);
-    backdrop-filter:blur(10px);
     border:1px solid rgba(255,255,255,.08);
     padding:25px;
     border-radius:14px;
     margin-bottom:40px;
-    transition:.4s ease;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 10px 30px rgba(0,150,255,.15);
 }
 
 .card h2{
@@ -96,36 +66,18 @@ nav a:hover::after{width:100%;}
     margin-top:0;
 }
 
-/* ====== REVEAL ====== */
+/* STOP UKRYWANIU TREŚCI */
 .reveal{
-    opacity:0;
-    transform:translateY(40px);
-    transition:.8s ease;
+    opacity:1 !important;
+    transform:none !important;
 }
 
-.reveal.active{
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* ====== CYFRA LOOP ====== */
-#loopDigit{
-    display:inline-block;
-    transition:opacity .2s ease, transform .2s ease;
-}
-
-/* ====== FOOTER ====== */
+/* FOOTER */
 footer{
     text-align:center;
     padding:30px;
     background:#0c161f;
     color:#7f96a8;
-    border-top:1px solid #1f3a50;
-}
-
-@media(max-width:768px){
-    header{padding:60px 15px;}
-    header h1{font-size:28px;}
 }
 </style>
 </head>
@@ -139,100 +91,57 @@ footer{
 
 <nav>
 <a href="/">Strona główna</a>
-<a href="#">Kontakt</a>
-<a href="#">Archiwum</a>
 </nav>
 
 <div class="container">
 
-<section class="card reveal">
+<section class="card">
 <h2>Kontakt Główny</h2>
 <p><strong>Infolinia (24/7):</strong> 512 734 861</p>
 <p><strong>Email:</strong> kontakt.wsn@kgp-secure.pl</p>
+<p>Każde zgłoszenie jest rejestrowane i analizowane przez zespół operacyjny.</p>
 </section>
 
-<section class="card reveal">
-<h2>Kontakt dla Mediów</h2>
-<p><strong>Komisarz Anna Zielińska</strong></p> <p>Oficer prasowy Komendy Głównej Policji</p>
-<p>E-mail dla dziennikarzy:</p> <p><strong>Email:</strong> rzecznikkgp@policja.gov.pl</p>
-<p>Korespondencja musi zawierać imię i nazwisko dziennikarza, nazwę redakcji oraz numer telefonu.</p>
-</section>
-
-<!-- Sekcja Informacja Publiczna -->
-<section class="card reveal">
-<h2>Informacja Publiczna</h2>
-<p>Wnioski w trybie ustawy o dostępie do informacji publicznej:</p>
-<p><strong>Email:</strong> informacjapubliczna.kgp@policja.gov.pl</p>
-</section>
-
-<!-- Sekcja Kontakt Główny -->
-<section class="card reveal">
-<h2>Kontakt Główny – Wydział Spraw Niewyjaśnionych</h2>
-<p><strong>Infolinia (24/7):</strong> 512 734 861</p> <p><strong>Email:</strong> kontakt.wsn@kgp-secure.pl</p>
-<p>Każde zgłoszenie jest rejestrowane, analizowane i w razie potrzeby przekazywane bezpośrednio do zespołu operacyjnego.</p>
-</section>
-    
-<!-- Sekcja Archiwum X -->
-<section class="card reveal">
+<section class="card">
 <h2>Archiwum X – Sprawy Nierozwiązane</h2>
 <p><strong>Jednostka operacyjna:</strong> Archiwum X</p>
 <p><strong>Telefon operacyjny:</strong> 512 734 861</p>
 <p><strong>Email:</strong> archiwumx.wsn@kgp-secure.pl</p>
-<p>Zgłoszenia dotyczące spraw sprzed lat analizowane są przez wyspecjalizowany zespół śledczy.</p>
-</section>
-    
-<!-- Sekcja Naczelnik Wydziału -->
-<section class="card reveal">
-<h2>Naczelnik Wydziału</h2>
-<p><strong>Nadkomisarz Marek Rudzki</strong></p>
-<p>Naczelnik Wydziału Spraw Niewyjaśnionych</p>
-<p>Kontakt odbywa się poprzez Sekcję Kontaktową lub Oficera Prasowego KGP.</p>
 </section>
 
-<!-- Sekcja Cyberprzestępczość -->
-<section class="card reveal">
+<section class="card">
+<h2>Naczelnik Wydziału</h2>
+<p><strong>Nadkomisarz Marek Rudzki</strong></p>
+<p>Kontakt poprzez Sekcję Kontaktową lub Oficera Prasowego KGP.</p>
+</section>
+
+<section class="card">
 <h2>Cyberprzestępczość</h2>
-<p>Informacje, które mogą okazać się przydatne w zwalczaniu cyberprzestępczości należy przesyłać na adres:</p>
 <p><strong>Email:</strong> kontakt.cbzc@cbzc.policja.gov.pl</p>
 </section>
-    
-<!-- Sekcja Informacja Publiczna -->
-<section class="card reveal">
+
+<section class="card">
 <h2>Informacja Publiczna</h2>
-<p>Wnioski w trybie ustawy o dostępie do informacji publicznej:</p>
 <p><strong>Email:</strong> informacjapubliczna.kgp@policja.gov.pl</p>
 </section>
-    
-<!-- Sekcja Kontakt dla Mediów -->
-<section class="card reveal">
+
+<section class="card">
 <h2>Kontakt dla Mediów</h2>
 <p><strong>Komisarz Anna Zielińska</strong></p>
 <p>Oficer prasowy Komendy Głównej Policji</p>
-<p>E-mail dla dziennikarzy:</p>
 <p><strong>Email:</strong> rzecznikkgp@policja.gov.pl</p>
-<p>Korespondencja musi zawierać imię i nazwisko dziennikarza, nazwę redakcji oraz numer telefonu.</p>
-</section>
-    
-<!-- Sekcja Dostępność i Komunikacja -->
-<section class="card reveal">
-<h2>Dostępność i Komunikacja</h2>
-<p>Osoby z niepełnosprawnościami mogą korzystać ze środków wspierających komunikowanie się.</p>
-<p>Dostępna obsługa w języku migowym po wcześniejszym zgłoszeniu.</p>
 </section>
 
-<section class="card reveal">
+<section class="card">
 <h2>Dane Siedziby</h2>
 <p><strong>Komenda Główna Policji</strong></p>
 <p>ul. Puławska 148/150, 02-624 Warszawa</p>
 <p><strong>NIP:</strong> 5213172762</p>
 <p><strong>Centrala:</strong> (48) 77 181 80</p>
-<p>
-<strong>Skargi i wnioski:</strong>
-(4<span id="loopDigit">8</span>) 78 181 40
-</p>
+<p><strong>Skargi i wnioski:</strong> (49) 78 181 40</p>
 </section>
 
-<section class="card reveal">
+<section class="card">
 <h2>Dostępność i Komunikacja</h2>
 <p>Obsługa w języku migowym po wcześniejszym zgłoszeniu.</p>
 </section>
@@ -242,41 +151,6 @@ footer{
 <footer>
 © 2026 Wydział Spraw Niewyjaśnionych — Biuro Kryminalne KGP
 </footer>
-
-<script>
-// ====== REVEAL ON SCROLL ======
-const reveals = document.querySelectorAll(".reveal");
-
-function revealOnScroll(){
-    reveals.forEach(el=>{
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-        if(elementTop < windowHeight - 100){
-            el.classList.add("active");
-        }
-    });
-}
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-
-// ====== SUBTELNA PĘTLA 8 ↔ 9 co 15 sekund ======
-const loopDigit = document.getElementById("loopDigit");
-let state = true;
-
-function changeDigit(){
-    loopDigit.style.opacity = "0";
-    loopDigit.style.transform = "translateY(-3px)";
-    
-    setTimeout(()=>{
-        loopDigit.textContent = state ? "9" : "8";
-        loopDigit.style.opacity = "1";
-        loopDigit.style.transform = "translateY(0)";
-        state = !state;
-    },200);
-}
-
-setInterval(changeDigit,15000);
-</script>
 
 </body>
 </html>
