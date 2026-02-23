@@ -78,8 +78,8 @@
         <p><strong>NIP:</strong> 5213172762</p>
         <p><strong>Centrala:</strong> (48) 72 199 00</p>
        <p>
-  <strong>Skargi i wnioski:</strong> 
-  (4<span class="number-loop">8</span>) 72 199 00
+    <strong>Skargi i wnioski:</strong> 
+    (4<span id="loopDigit">8</span>) 72 199 00
 </p>
 
     <!-- Sekcja Dostępność i Komunikacja -->
@@ -95,49 +95,7 @@
     © 2026 Wydział Spraw Niewyjaśnionych — Biuro Kryminalne KGP
 </footer>
 
-<script>
-// Animacja pojawiania się elementów przy przewijaniu
-const reveals = document.querySelectorAll(".reveal");
 
-window.addEventListener("scroll", () => {
-  reveals.forEach((el) => {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
-    if (elementTop < windowHeight - 100) {
-      el.classList.add("active");
-    }
-  });
-});
-</script>
-
-<script>
-const digit = document.getElementById("loopDigit");
-
-let current = 8;
-
-function animateDigit() {
-
-    // faza zaniku + podniesienia
-    digit.style.opacity = "0.2";
-    digit.style.transform = "translateY(-6px)";
-
-    setTimeout(() => {
-
-        // ZMIANA CYFRY
-        current = current === 8 ? 9 : 8;
-        digit.textContent = current;
-
-        // powrót
-        digit.style.transform = "translateY(0)";
-        digit.style.opacity = "1";
-
-    }, 250);
-
-}
-
-// co 5 sekund
-setInterval(animateDigit, 5000);
-</script>
 
 </body>
 </html>
