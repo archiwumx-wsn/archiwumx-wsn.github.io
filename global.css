@@ -270,3 +270,35 @@ footer {
     opacity: 1;
     transform: scale(1);
 }
+
+.main-image {
+    width: 150px;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+.extra-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, opacity 0.6s ease;
+    opacity: 0;
+}
+
+.extra-content.active {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.hidden-image {
+    width: 150px;
+    margin-top: 15px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.hidden-image.show {
+    opacity: 1;
+    transform: scale(1);
+}
