@@ -123,7 +123,26 @@
         <p><strong>Numer referencyjny:</strong> #SPN-52950-1</p>
     </section>
 
-    <section class="card reveal clickable" onclick="toggleKomunikat(this)">
+  <script>
+function toggleKomunikat(section) {
+    const content = section.querySelector(".extra-content");
+    const image = section.querySelector(".extra-image");
+
+    if (content.classList.contains("active")) {
+        content.classList.remove("active");
+        image.classList.remove("show");
+    } else {
+        content.classList.add("active");
+
+        // Opóźnione pojawienie się zdjęcia
+        setTimeout(() => {
+            image.classList.add("show");
+        }, 600);
+    }
+}
+</script>
+  
+<section class="card reveal clickable" onclick="toggleKomunikat(this)">
     <h2>Komunikat nr 2 – Zaginiona osoba</h2>
     <p><strong>Data:</strong> 20 grudnia 2025</p>
     <p><strong>Opis:</strong> Zaginiona osoba, młoda kobieta w wieku 28 lat, ostatni raz widziana w okolicach ulicy Puławskiej. Ślad po niej zaginął po opuszczeniu lokalu o 23:30.</p>
