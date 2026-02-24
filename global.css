@@ -305,9 +305,11 @@ footer {
 
 .pagination {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+    justify-content: center; /* Wyśrodkowuje przyciski w poziomie */
+    align-items: center;     /* Wyśrodkowuje przyciski w pionie */
+    margin-top: 20px;        /* Odstęp od góry */
+    width: 100%;             /* Ustawienie szerokości na 100% kontenera */
+    text-align: center;      /* Zapewnia, że elementy w .pagination są wyśrodkowane */
 }
 
 .pagination button {
