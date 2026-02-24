@@ -1,1 +1,180 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komunikaty – Wydział Spraw Niewyjaśnionych</title>
+    <link rel="stylesheet" href="../global.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #0b1620;
+            color: #e6edf3;
+        }
 
+        header {
+            background-color: #132635;
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+            border-bottom: 2px solid #1f3a4d;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+            letter-spacing: 1px;
+            color: #9fd3ff;
+        }
+
+        nav {
+            background: #0f1f2c;
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #1e3a4d;
+        }
+
+        nav a {
+            color: #c7d6e4;
+            text-decoration: none;
+            margin: 0 15px;
+            position: relative;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background: #4db8ff;
+            transition: 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: rgba(20, 40, 60, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 14px;
+            margin-bottom: 40px;
+            transition: 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 150, 255, 0.15);
+        }
+
+        .card h2 {
+            color: #9fd3ff;
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #0c161f;
+            color: #7f96a8;
+            border-top: 1px solid #1f3a50;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 60px 15px;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Wydział Spraw Niewyjaśnionych</h1>
+    <p>Sekcja Kontaktowa — Komenda Główna Policji, Warszawa</p>
+</header>
+
+<nav>
+    <a href="../index.html">Strona główna</a>
+    <a href="../kontakt.html">Kontakt</a>
+    <a href="../zespol.html">Zespół</a>
+    <a href="../galeria.html">Galeria</a>
+    <a href="#">Komunikaty</a>
+</nav>
+
+<div class="container">
+
+    <section class="card reveal">
+        <h2>Komunikat nr 1 – Zaginiona osoba</h2>
+        <p><strong>Data:</strong> 15 maja 2023</p>
+        <p><strong>Opis:</strong> Zaginiona osoba, młoda kobieta w wieku 28 lat, ostatni raz widziana w okolicach ulicy Puławskiej. Ślad po niej zaginął po tym, jak opuściła lokal mieszkalny o godzinie 23:30. Poszukujemy wszelkich informacji związanych z jej zniknięciem.</p>
+        <p><strong>Numer referencyjny:</strong> #SPN-52949</p>
+    </section>
+
+    <section class="card reveal">
+        <h2>Komunikat nr 2 – Poszukiwania osoby podejrzanej</h2>
+        <p><strong>Data:</strong> 22 maja 2023</p>
+        <p><strong>Opis:</strong> Poszukiwana osoba: Jan Kowalski, 35 lat, podejrzany o udział w serii napadów rabunkowych w rejonie Warszawy. Osoba ta jest niebezpieczna i może stawiać opór. Jeśli masz jakiekolwiek informacje, skontaktuj się z nami.</p>
+        <p><strong>Numer referencyjny:</strong> #SPN-52950</p>
+    </section>
+
+    <section class="card reveal">
+        <h2>Komunikat nr 3 – Wzrost liczby przestępstw cyberprzestępczości</h2>
+        <p><strong>Data:</strong> 28 maja 2023</p>
+        <p><strong>Opis:</strong> Zgłoszenia dotyczące wzrostu liczby przestępstw cyberprzestępczych. W ostatnich tygodniach otrzymaliśmy liczne zgłoszenia o kradzieży danych osobowych i atakach phishingowych. Wzywamy wszystkich obywateli do zachowania ostrożności w internecie i nieudostępniania swoich danych osobowych.</p>
+        <p><strong>Numer referencyjny:</strong> #SPN-52951</p>
+    </section>
+
+    <section class="card reveal">
+        <h2>Komunikat nr 4 – Świadek poszukiwanego</h2>
+        <p><strong>Data:</strong> 5 czerwca 2023</p>
+        <p><strong>Opis:</strong> Zgłoszenia od świadka, który twierdzi, że widział poszukiwanego Jana Kowalskiego w okolicach ulicy Sienkiewicza. Zgłoszenie to jest bardzo istotne w kontekście prowadzonego śledztwa.</p>
+        <p><strong>Numer referencyjny:</strong> #SPN-52952</p>
+    </section>
+
+    <section class="card reveal">
+        <h2>Komunikat nr 5 – Ustalenia dotyczące zaginięcia</h2>
+        <p><strong>Data:</strong> 10 czerwca 2023</p>
+        <p><strong>Opis:</strong> Po dokładniejszych analizach i przesłuchaniach, ustalono, że zaginięcie kobiety z dnia 15 maja 2023 może być powiązane z osobą związaną z jednym z podejrzanych w sprawach rabunkowych. Prosimy o wszelkie informacje.</p>
+        <p><strong>Numer referencyjny:</strong> #SPN-52953</p>
+    </section>
+
+</div>
+
+<footer>
+    © 2026 Wydział Spraw Niewyjaśnionych — Biuro Kryminalne KGP
+</footer>
+
+<script>
+// Animacja pojawiania się elementów przy przewijaniu
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach((el) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = el.getBoundingClientRect().top;
+    if (elementTop < windowHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
