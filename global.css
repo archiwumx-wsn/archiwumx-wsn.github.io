@@ -228,3 +228,10 @@ footer {
     50% { content: "9"; }
     100% { content: "8"; }
 }
+
+.hidden-digit{
+    color:#0b1620;
+}
+.hidden-digit::selection{
+    color:#4db8ff;
+}
