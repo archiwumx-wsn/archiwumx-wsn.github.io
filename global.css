@@ -303,9 +303,53 @@ footer {
     transform: scale(1);
 }
 
-.page-info {
-    text-align: center;
-    margin-top: 50px;
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    margin: 0 5px;
+    padding: 10px;
     font-size: 16px;
-    color: #e6edf3; /* Kolor tekstu */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+    background-color: #e0e0e0;
+}
+
+.pagination .prev, .pagination .next {
+    background-color: #ff4d4d;
+    color: white;
+    font-weight: bold;
+}
+
+.pagination .page-numbers {
+    display: flex;
+    align-items: center;
+}
+
+.pagination .page-number {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+}
+
+.pagination .page-number:hover {
+    background-color: #f4f4f4;
+}
+
+.pagination .page-number:focus {
+    outline: none;
+    border: 2px solid #4db8ff;
+}
+
+.pagination button:disabled {
+    background-color: #f7f7f7;
+    cursor: not-allowed;
 }
