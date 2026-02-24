@@ -302,3 +302,10 @@ footer {
     opacity: 1;
     transform: scale(1);
 }
+
+.page-info {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 16px;
+    color: #e6edf3; /* Kolor tekstu */
+}
