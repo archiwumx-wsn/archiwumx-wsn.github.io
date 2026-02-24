@@ -134,7 +134,6 @@ function toggleKomunikat(section) {
     } else {
         content.classList.add("active");
 
-        // Opóźnione pojawienie się zdjęcia
         setTimeout(() => {
             image.classList.add("show");
         }, 600);
@@ -146,38 +145,38 @@ function toggleKomunikat(section) {
     <h2>Komunikat nr 2 – Zaginiona osoba</h2>
     <p><strong>Data:</strong> 20 grudnia 2025</p>
     <p><strong>Opis:</strong> Zaginiona osoba, młoda kobieta w wieku 28 lat, ostatni raz widziana w okolicach ulicy Puławskiej. Ślad po niej zaginął po opuszczeniu lokalu o 23:30.</p>
-    
-    <img src="assets/images/4.jpg" class="extra-image" alt="Zaginiona Osoba">
-    
+
+    <img src="assets/images/4.jpg" class="main-image" alt="Zaginiona Osoba">
+
     <p><strong>Numer referencyjny:</strong> #SPN-52950</p>
 
     <div class="extra-content">
         <p class="extra-text">
             Aktualizacja 27.12.2025: W toku czynności zabezpieczono monitoring z pobliskiego parkingu.
-            Na nagraniu widoczna jest sylwetka osoby trzeciej.
+            Na nagraniu widoczna jest sylwetka osoby trzeciej w charakterystycznej żółtej kurtce.
+            Prosimy świadków o kontakt jeśli rozpoznają tę osobę.
         </p>
 
-        <img src="assets/images/monitoring.jpg" class="extra-image" alt="Zrzut z monitoringu">
+        <img src="assets/images/monitoring.jpg" class="hidden-image" alt="Zrzut z monitoringu">
     </div>
 </section>
-
     <section class="card reveal">
         <h2>Komunikat nr 3 – Wzrost liczby przestępstw cyberprzestępczości</h2>
-        <p><strong>Data:</strong> 28 maja 2023</p>
+        <p><strong>Data:</strong> 10 czerwca 2025</p>
         <p><strong>Opis:</strong> Zgłoszenia dotyczące wzrostu liczby przestępstw cyberprzestępczych. W ostatnich tygodniach otrzymaliśmy liczne zgłoszenia o kradzieży danych osobowych i atakach phishingowych. Wzywamy wszystkich obywateli do zachowania ostrożności w internecie i nieudostępniania swoich danych osobowych.</p>
         <p><strong>Numer referencyjny:</strong> #SPN-52951</p>
     </section>
 
     <section class="card reveal">
         <h2>Komunikat nr 4 – Świadek poszukiwanego</h2>
-        <p><strong>Data:</strong> 5 czerwca 2023</p>
+        <p><strong>Data:</strong> 5 czerwca 2025</p>
         <p><strong>Opis:</strong> Zgłoszenia od świadka, który twierdzi, że widział poszukiwanego Jana Kowalskiego w okolicach ulicy Sienkiewicza. Zgłoszenie to jest bardzo istotne w kontekście prowadzonego śledztwa.</p>
         <p><strong>Numer referencyjny:</strong> #SPN-52952</p>
     </section>
 
     <section class="card reveal">
         <h2>Komunikat nr 5 – Ustalenia dotyczące zaginięcia</h2>
-        <p><strong>Data:</strong> 10 czerwca 2023</p>
+        <p><strong>Data:</strong> 28 maja 2025</p>
         <p><strong>Opis:</strong> Po dokładniejszych analizach i przesłuchaniach, ustalono, że zaginięcie kobiety z dnia 15 maja 2023 może być powiązane z osobą związaną z jednym z podejrzanych w sprawach rabunkowych. Prosimy o wszelkie informacje.</p>
         <p><strong>Numer referencyjny:</strong> #SPN-52953</p>
     </section>
@@ -189,7 +188,6 @@ function toggleKomunikat(section) {
 </footer>
 
 <script>
-// Animacja pojawiania się elementów przy przewijaniu
 const reveals = document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll", () => {
