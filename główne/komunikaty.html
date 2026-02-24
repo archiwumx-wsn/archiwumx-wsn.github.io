@@ -126,17 +126,17 @@
   <script>
 function toggleKomunikat(section) {
     const content = section.querySelector(".extra-content");
-    const image = section.querySelector(".extra-image");
+    const hiddenImage = section.querySelector(".hidden-image");
 
     if (content.classList.contains("active")) {
         content.classList.remove("active");
-        image.classList.remove("show");
+        hiddenImage.classList.remove("show");
     } else {
         content.classList.add("active");
 
         setTimeout(() => {
-            image.classList.add("show");
-        }, 600);
+            hiddenImage.classList.add("show");
+        }, 400);
     }
 }
 </script>
