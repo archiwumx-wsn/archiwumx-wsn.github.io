@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>ㅤ</title>
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #0a0f1a;
+    color: #d6e4ff;
+    font-family: "Courier New", monospace;
+    overflow-x: hidden;
+}
+
+#container {
+    padding: 60px;
+    max-width: 900px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+#loginBox {
+    display: none;
+    margin: 60px auto;
+    padding: 30px;
+    border: 1px solid #2c3e66;
+    background: rgba(10,15,30,0.85);
+    max-width: 400px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s ease;
+}
+
+#loginBox.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+input {
+    background: transparent;
+    border: 1px solid #3f5c99;
+    padding: 10px;
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    letter-spacing: 3px;
+    text-align: center;
+    width: 150px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 8px 20px;
+    background: #1b2b50;
+    border: 1px solid #3f5c99;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #243a6b;
+}
+
+#error {
+    color: #ff4d4d;
+    margin-top: 10px;
+}
+
+.warning {
+    animation: flash 0.4s ease;
+}
+
+@keyframes flash {
+    0% { background: #3a0000; }
+    100% { background: transparent; }
+}
+</style>
+</head>
+<body>
+
+<div id="container"></div>
+
+<div id="loginBox">
+    <h3>Kod Dostępu</h3>
+    <input type="password" id="codeInput" maxlength="5">
+    <br>
+    <button onclick="checkCode()">Zatwierdź</button>
+    <div id="error"></div>
+</div>
+
+<script>
+const text = `Ciepło przyszło za wcześnie.
+
+Minęło kilka miesięcy od początku roku — dokładnie tyle, by człowiek zdążył zapomnieć o noworocznych obietnicach. W archiwum znów zapaliło się światło. To było pierwsze miejsce, do którego zawsze się wracało. Początek. Punkt wyjścia.
+
+Na biurku leżała kartka.
+
+„Zaczynaj tam, gdzie wszystko się zaczęło.”
+
+Nikt jej nie podpisał.
+
+Tego samego wieczoru pojawił się kontakt.
+
+Nie telefon. Nie wiadomość.
+Miś ubrany w żółtą kurtkę.
+
+Siedział spokojnie na metalowym biurku w pokoju przesłuchań, jakby należał tam od lat. Patrzył szklanymi oczami i mówił cicho, niemal szeptem.
+
+— Lubię różne rzeczy — powiedział. — Potrafię je policzyć.
+
+I liczył długo. Zastanawiał się chwilę przy każdej z nich, jakby nadawał im wagę. Gdy skończył, zapadła cisza. W pokoju zrobiło się ciemno wyliczył że lubi deszcz, wieczór, ciebie, zachód słońca, wodę, statki, jedzenie, ciebie i swoją kurtkę.
+
+Następnego dnia pojawił się komunikat.
+
+Dziewczyna stała pod uliczną lampą. Jej twarz przecinał cień, a w głosie było coś pomiędzy spokojem a ostrzeżeniem.
+
+— Bohaterowie nie zawsze działają razem — powiedziała. — Czasem muszą się rozdzielić.
+
+Zrobiła kilka kroków w jedną stronę, potem tyle samo w drugą. Jakby coś dzieliło przestrzeń dokładnie na pół. Jakby granica była niewidoczna, ale realna.
+
+— Wtedy zaczyna się gra.
+
+W archiwum było wiele biurek. Ustawione równo, symetrycznie, jakby nikt nigdy nie naruszył porządku. Segregatory tworzyły idealne linie. Wszystko na swoim miejscu.
+
+Tej nocy coś jednak się nie zgadzało.
+
+Dwa krzesła były odsunięte.
+
+Nieznacznie.
+
+Jakby ktoś wstał przed chwilą.
+Albo właśnie wrócił.
+
+Nikt tego nie skomentował.
+
+Zapadła noc.
+
+Dziewczyna wróciła, trzymając aparat.
+
+— Muszę to udokumentować — powiedziała. — Inaczej nikt nie uwierzy.
+
+Było zbyt ciemno, by cokolwiek dostrzec. Ściany zlewały się z cieniem, a korytarz wydawał się dłuższy niż zwykle.
+
+— Wystarczy włączyć światło.
+
+Klik.
+
+Pierwszy błysk rozciął mrok.
+Drugi odbił się w szybie.
+Kolejne obrazy zaczęły układać się w sekwencję.
+
+Ostatni kadr zatrzymał coś, czego wcześniej nie było widać.
+
+Galeria ożyła.
+
+A archiwum — jakby czekało, aż ktoś połączy wszystko w całość.
+
+Bo to nie była opowieść.
+
+To była instrukcja.
+`;
+
+const container = document.getElementById("container");
+let i = 0;
+let attempts = 0;
+
+function typeWriter() {
+    if (i < text.length) {
+        container.innerHTML += text.charAt(i);
+        i++;
+
+        // Auto-scroll w trakcie pisania
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
+
+        setTimeout(typeWriter, 18);
+    } else {
+        const loginBox = document.getElementById("loginBox");
+        loginBox.style.display = "block";
+        setTimeout(() => loginBox.classList.add("active"), 50);
+    }
+}
+
+function checkCode() {
+    const code = document.getElementById("codeInput").value;
+    const error = document.getElementById("error");
+
+    if (code === "59427") {
+        window.location.href = "../assets/images/pamietnik.jpg";
+    } else {
+        attempts++;
+        error.innerText = "Nieprawidłowy kod.";
+        document.body.classList.add("warning");
+
+        setTimeout(() => {
+            document.body.classList.remove("warning");
+        }, 300);
+
+        if (attempts >= 3) {
+            error.innerText = "Zbyt wiele prób. System zamknięty.";
+            setTimeout(() => {
+                window.location.href = "../index.html";
+            }, 1500);
+        }
+    }
+}
+
+typeWriter();
+</script>
+
+</body>
+</html>
