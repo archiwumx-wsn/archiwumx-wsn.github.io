@@ -19,6 +19,69 @@ body {
 }
 }
 
+.diary-img {
+  width: 280px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.diary-img:hover {
+  transform: scale(1.05);
+}
+
+.diary-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.4s;
+}
+
+.diary-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.diary-book {
+  width: 600px;
+  height: 400px;
+  background: #f4ecd8;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s ease;
+  padding: 40px;
+  font-family: Georgia, serif;
+  color: #222;
+  position: relative;
+}
+
+.diary-modal.active .diary-book {
+  transform: scaleX(1);
+}
+
+.diary-page {
+  opacity: 0;
+  transition: opacity 1s ease 0.6s;
+}
+
+.diary-modal.active .diary-page {
+  opacity: 1;
+}
+
+.close-diary {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
 #terminal {
     padding: 40px;
     white-space: pre-wrap;
@@ -154,6 +217,79 @@ function sprawdzKod(kod) {
 }
 
 startTerminal();
+</script>
+
+<!-- Pamiętnik -->
+<img src="img/pamietnik.jpg" id="diaryTrigger" class="diary-img">
+
+<!-- Fragment pamiętnika -->
+<div id="diaryModal" class="diary-modal">
+  <div class="diary-book">
+    <span class="close-diary">&times;</span>
+
+    <div class="diary-page">
+      <h2>Dziennik – Fragment</h2>
+      <p id="diaryText"></p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const diaryTrigger = document.getElementById("diaryTrigger");
+const diaryModal = document.getElementById("diaryModal");
+const closeDiary = document.querySelector(".close-diary");
+const diaryText = document.getElementById("diaryText");
+
+const fragment = `
+Ciepły miesiąc. Pięć miesięcy po Nowym Roku.
+Dziś odezwał się Miś.
+
+— Lubię 9 rzeczy — powiedział.
+1. Ciszę.
+2. Światło.
+3. Tajemnice.
+4. Numer 5.
+5. Odwagę.
+6. Zespół.
+7. Bohaterów.
+8. Galerię wspomnień.
+9. Jedną osobę.
+
+A potem pojawiła się dziewczyna.
+Mówiła o super bohaterach,
+jakby ekipa rozdzieliła się na pół.
+
+Jest noc.
+Ale wystarczy włączyć światło.
+`;
+
+function typeDiary(text, speed = 25) {
+  diaryText.innerHTML = "";
+  let i = 0;
+  const interval = setInterval(() => {
+    diaryText.innerHTML += text[i];
+    i++;
+    if (i >= text.length) clearInterval(interval);
+  }, speed);
+}
+
+diaryTrigger.addEventListener("click", () => {
+  diaryModal.classList.add("active");
+  setTimeout(() => {
+    typeDiary(fragment);
+  }, 700);
+});
+
+closeDiary.addEventListener("click", () => {
+  diaryModal.classList.remove("active");
+});
+
+diaryModal.addEventListener("click", (e) => {
+  if (e.target === diaryModal) {
+    diaryModal.classList.remove("active");
+  }
+});
 </script>
 
 </body>
