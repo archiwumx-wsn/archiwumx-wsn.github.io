@@ -1,304 +1,252 @@
 <!doctype html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Archiwum WSN — Wydział Spraw Niewyjaśnionych</title>
-  <style>
-    :root{
-      --bg:#0b0f14;
-      --panel:#0f1720;
-      --accent:#ffb86b;
-      --muted:#9fb0bd;
-      --glass: rgba(255,255,255,0.03);
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-    html,body{height:100%;margin:0;background:
-      radial-gradient(800px 400px at 10% 10%, rgba(255,184,107,0.03), transparent 10%),
-      linear-gradient(180deg,#071018 0%, #0b0f14 100%);
-      color:#e6eef6;-webkit-font-smoothing:antialiased;}
-    .container{
-      min-height:100%;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:flex-start;
-      padding:48px 20px 120px;
-      box-sizing:border-box;
-      gap:18px;
-    }
-    .header{
-      width:100%;
-      max-width:1000px;
-      display:flex;
-      align-items:center;
-      gap:16px;
-    }
-    .logo{
-      width:64px;height:64px;border-radius:8px;
-      background:linear-gradient(135deg,#ffb86b,#ff7b7b);
-      display:flex;align-items:center;justify-content:center;font-weight:800;color:#081018;
-      box-shadow:0 8px 30px rgba(255,184,107,0.06);
-      font-family:monospace;
-    }
-    h1{margin:0;font-size:20px;}
-    .subtitle{color:var(--muted);margin-top:6px;font-size:14px;}
-    .card{
-      width:100%;
-      max-width:1000px;
-      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
-      border-radius:12px;padding:22px;box-sizing:border-box;border:1px solid rgba(255,255,255,0.03);
-      display:grid;grid-template-columns:1fr 360px;gap:20px;
-    }
-    .left{
-      padding:8px 6px;
-    }
-    .left p{color:var(--muted);line-height:1.5}
-    .right{
-      padding:12px;border-left:1px dashed rgba(255,255,255,0.02);
-    }
-    .empty-btn{
-      margin-top:28px;
-      width:100%;
-      height:56px;
-      border-radius:10px;
-      background:transparent;
-      border:2px dashed rgba(255,255,255,0.03);
-      color:var(--muted);
-      display:flex;align-items:center;justify-content:center;
-      cursor:pointer;
-      transition:transform .08s, border-color .12s;
-      user-select:none;
-    }
-    .empty-btn:active{ transform:translateY(1px); }
-    .footer{
-      position:fixed;left:0;right:0;bottom:18px;display:flex;justify-content:center;pointer-events:none;
-    }
-    .bottom-trigger{
-      pointer-events:auto;
-      width:220px;height:44px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.02);
-      color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-    /* Modal login */
-    .overlay{
-      position:fixed;inset:0;background:rgba(2,6,12,0.6);display:none;align-items:center;justify-content:center;
-      z-index:1000;
-    }
-    .overlay.show{ display:flex; }
-    .modal{
-      width:420px;background:linear-gradient(180deg,#071018,#0b1216);border-radius:12px;padding:20px;border:1px solid rgba(255,255,255,0.04);
-      box-shadow:0 20px 60px rgba(2,6,23,0.7);color:#eaf6f1;
-    }
-    .modal h2{margin:0 0 8px 0;font-size:18px;}
-    .field{margin-top:12px;display:flex;flex-direction:column;gap:6px;}
-    label{font-size:13px;color:var(--muted);}
-    input[type="text"], input[type="password"]{
-      padding:10px 12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:rgba(255,255,255,0.01);
-      color:inherit;font-size:15px;outline:none;font-family:inherit;
-    }
-    .btn{
-      margin-top:14px;padding:10px 12px;border-radius:8px;border:0;background:linear-gradient(90deg,#ffb86b,#ff7b7b);
-      color:#081018;font-weight:700;cursor:pointer;width:100%;
-    }
-    .status{margin-top:10px;font-family:monospace;color:var(--muted);font-size:13px;}
-    .error{color:#ff6b6b;font-weight:700}
+<title>WSN – Archiwum Wydziału Spraw Niewyjaśnionych</title>
 
-    /* typing caret */
-    .typing-caret{
-      display:inline-block;width:8px;height:18px;background:var(--accent);margin-left:4px;vertical-align:middle;
-      animation:blink 1s steps(2) infinite;
-    }
-    @keyframes blink{50%{opacity:0}}
+<style>
 
-    @media (max-width:880px){
-      .card{grid-template-columns:1fr;}
-      .right{border-left:none;border-top:1px dashed rgba(255,255,255,0.02);}
-    }
-  </style>
+body{
+background:#05080d;
+color:#dfe7ef;
+font-family:Courier New, monospace;
+margin:0;
+}
+
+header{
+background:#0b1118;
+padding:20px;
+border-bottom:1px solid #1b2a3a;
+}
+
+header h1{
+margin:0;
+font-size:22px;
+letter-spacing:2px;
+}
+
+.subtitle{
+color:#7f95a8;
+font-size:13px;
+margin-top:4px;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:30px;
+}
+
+.panel{
+background:#0d141c;
+border:1px solid #1a2b3b;
+padding:20px;
+margin-bottom:20px;
+}
+
+.panel h2{
+margin-top:0;
+font-size:18px;
+color:#ffb86b;
+}
+
+.case{
+padding:10px;
+border-bottom:1px dashed #203344;
+}
+
+.case:last-child{
+border-bottom:none;
+}
+
+.case span{
+color:#7f95a8;
+font-size:13px;
+}
+
+.search{
+display:flex;
+gap:10px;
+margin-top:10px;
+}
+
+input{
+background:#05080d;
+border:1px solid #1a2b3b;
+color:white;
+padding:8px;
+font-family:inherit;
+}
+
+button{
+background:#ffb86b;
+border:none;
+padding:8px 14px;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#ffa94d;
+}
+
+.system{
+margin-top:10px;
+font-size:13px;
+color:#7f95a8;
+}
+
+.hidden{
+display:none;
+}
+
+.glitch{
+animation:glitch 0.3s infinite;
+}
+
+@keyframes glitch{
+0%{text-shadow:2px 0 red}
+50%{text-shadow:-2px 0 blue}
+100%{text-shadow:2px 0 red}
+}
+
+footer{
+text-align:center;
+padding:20px;
+color:#6c7f91;
+font-size:12px;
+}
+
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="header">
-      <div class="logo">WSN</div>
-      <div>
-        <h1>Archiwum WSN</h1>
-        <div class="subtitle">Wydział Spraw Niewyjaśnionych — zasoby wewnętrzne</div>
-      </div>
-    </div>
 
-    <div class="card" role="region" aria-label="Archiwum WSN">
-      <div class="left">
-        <p>Witamy w archiwum WSN. Materiały zawierają raporty, notatki i ślady spraw prowadzonych przez wydział. Dostęp do niektórych sekcji jest ograniczony.</p>
-        <p>Jeśli bierzesz udział w fabule lub ARG, nie używaj prawdziwych danych. W dolnej części strony znajduje się dyskretny przycisk aktywujący ekran logowania po pięciu kliknięciach.</p>
+<header>
+<h1>ARCHIWUM WSN</h1>
+<div class="subtitle">Wydział Spraw Niewyjaśnionych – system archiwalny</div>
+</header>
 
-        <div style="margin-top:18px;">
-          <div class="chip" style="display:inline-block;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);color:var(--muted);font-family:monospace;">wersja: 2.3.1</div>
-        </div>
-      </div>
+<div class="container">
 
-      <div class="right">
-        <h3>Ostatnie wpisy</h3>
-        <p style="color:var(--muted);margin-top:8px;">Brak nowych odczytów. Przeglądaj katalogi lub użyj ukrytego dostępu.</p>
+<div class="panel">
 
-        <div class="empty-btn" id="emptyBtn" title="Kliknij tutaj pięć razy">
-          <!-- pusty przycisk wizualnie -->
-        </div>
+<h2>Status systemu</h2>
 
-        <div style="margin-top:12px;color:var(--muted);font-size:13px;">Kliknij w pusty przycisk pięć razy, aby odsłonić ekran logowania.</div>
-      </div>
-    </div>
-  </div>
+<div class="system">
+System operacyjny: WSN-ARCHIVE v3.1<br>
+Dostęp: ograniczony<br>
+Ostatnia synchronizacja: 18.04.2006
+</div>
 
-  <div class="footer">
-    <button id="bottomTrigger" class="bottom-trigger" aria-label="Aktywator ukrytego logowania"> </button>
-  </div>
+</div>
 
-  <!-- Modal login -->
-  <div class="overlay" id="overlay" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <h2 id="modalTitle">Dostęp do archiwum — logowanie</h2>
+<div class="panel">
 
-      <form id="loginForm" autocomplete="off" novalidate>
-        <div class="field">
-          <label for="username">Login</label>
-          <input id="username" name="username" type="text" readonly aria-readonly="true" />
-        </div>
+<h2>Wyszukiwanie sprawy</h2>
 
-        <div class="field">
-          <label for="password">Hasło</label>
-          <input id="password" name="password" type="password" placeholder="Wpisz hasło" required />
-        </div>
+<div class="search">
+<input id="caseInput" placeholder="numer sprawy...">
+<button onclick="searchCase()">Szukaj</button>
+</div>
 
-        <button type="submit" class="btn">Zaloguj</button>
+<div class="system" id="searchStatus">
+Wprowadź numer sprawy aby otworzyć archiwum.
+</div>
 
-        <div class="status" id="loginStatus">Wprowadź hasło, aby uzyskać dostęp.</div>
-      </form>
-    </div>
-  </div>
+</div>
 
-  <script>
-    (function(){
-      // Konfiguracja sekretu
-      const SECRET_USERNAME = 'P.Ioo97';
-      const SECRET_PASSWORD = 'gejkurczak1';
+<div class="panel">
 
-      // Licznik kliknięć (dolny przycisk i pusty przycisk)
-      let clicks = 0;
-      const requiredClicks = 5;
-      const emptyBtn = document.getElementById('emptyBtn');
-      const bottomTrigger = document.getElementById('bottomTrigger');
-      const overlay = document.getElementById('overlay');
-      const usernameInput = document.getElementById('username');
-      const passwordInput = document.getElementById('password');
-      const loginForm = document.getElementById('loginForm');
-      const loginStatus = document.getElementById('loginStatus');
+<h2>Ostatnie sprawy</h2>
 
-      // Funkcja pokazująca modal i uruchamiająca animację wpisywania loginu
-      function revealLogin(){
-        overlay.classList.add('show');
-        overlay.setAttribute('aria-hidden','false');
-        usernameInput.value = '';
-        passwordInput.value = '';
-        loginStatus.textContent = 'Wprowadź hasło, aby uzyskać dostęp.';
-        typeUsername(SECRET_USERNAME, usernameInput);
-        passwordInput.focus();
-      }
+<div class="case">
+Sprawa #59142<br>
+<span>Status: zamknięta</span>
+</div>
 
-      // Obsługa kliknięć na pusty przycisk i dolny trigger
-      function registerClick(){
-        clicks++;
-        // krótka animacja obramowania
-        emptyBtn.style.borderColor = 'rgba(255,255,255,0.08)';
-        setTimeout(()=> emptyBtn.style.borderColor = 'rgba(255,255,255,0.03)', 120);
-        if(clicks >= requiredClicks){
-          clicks = 0;
-          revealLogin();
-        }
-      }
+<div class="case">
+Sprawa #43821<br>
+<span>Status: nierozwiązana</span>
+</div>
 
-      emptyBtn.addEventListener('click', registerClick);
-      bottomTrigger.addEventListener('click', registerClick);
+<div class="case">
+Sprawa #59427<br>
+<span>Status: dostęp ograniczony</span>
+</div>
 
-      // Animacja "pisania" loginu
-      function typeUsername(text, inputEl, speed = 90){
-        inputEl.value = '';
-        inputEl.setAttribute('aria-label','Login (wpisywanie...)');
-        let i = 0;
-        const caret = document.createElement('span');
-        caret.className = 'typing-caret';
-        inputEl.parentNode.appendChild(caret);
-        function step(){
-          if(i < text.length){
-            inputEl.value += text.charAt(i);
-            i++;
-            setTimeout(step, speed + Math.random()*60);
-          } else {
-            // zakończone
-            inputEl.setAttribute('aria-label','Login');
-            caret.remove();
-          }
-        }
-        setTimeout(step, 200);
-      }
+</div>
 
-      // Zamknięcie modala po kliknięciu poza modal
-      overlay.addEventListener('click', function(e){
-        if(e.target === overlay){
-          overlay.classList.remove('show');
-          overlay.setAttribute('aria-hidden','true');
-        }
-      });
+<div class="panel hidden" id="secretCase">
 
-      // Obsługa formularza logowania
-      loginForm.addEventListener('submit', function(e){
-        e.preventDefault();
-        const entered = passwordInput.value || '';
-        loginStatus.classList.remove('error');
-        loginStatus.textContent = 'Weryfikacja...';
-        // symulacja opóźnienia
-        setTimeout(() => {
-          if(entered === SECRET_PASSWORD){
-            loginStatus.textContent = 'Dostęp przyznany. Witaj.';
-            // tutaj można przekierować lub odsłonić zasoby
-            // dla demo pokażemy krótką animację i zamkniemy modal
-            setTimeout(()=> {
-              overlay.classList.remove('show');
-              overlay.setAttribute('aria-hidden','true');
-              loginStatus.textContent = 'Wprowadź hasło, aby uzyskać dostęp.';
-            }, 900);
-          } else {
-            loginStatus.textContent = 'Hasło nieprawidłowe.';
-            loginStatus.classList.add('error');
-            // drobne utrudnienie przy ARG
-            if(Math.random() < 0.15){
-              loginStatus.textContent = 'Błąd 0x3F — dostęp zablokowany tymczasowo.';
-            }
-          }
-        }, 700);
-      });
+<h2>AKTA SPRAWY 59427</h2>
 
-      // Ułatwienie testowe: naciśnij klawisz D, aby automatycznie wypełnić hasło (tylko do testów)
-      window.addEventListener('keydown', function(e){
-        if(e.key.toLowerCase() === 'd' && overlay.classList.contains('show')){
-          passwordInput.value = SECRET_PASSWORD;
-          loginStatus.textContent = 'Hasło wypełnione (test). Kliknij Zaloguj.';
-          loginStatus.classList.remove('error');
-        }
-      });
+<div class="system">
+Ofiara: Julianna Żuk<br>
+Data zdarzenia: 18.04.2006<br>
+Lokalizacja: Berlin<br>
+Status: nierozwiązana
+</div>
 
-      // Zapobiegamy autouzupełnianiu przez przeglądarkę
-      usernameInput.setAttribute('autocomplete','off');
-      passwordInput.setAttribute('autocomplete','new-password');
+<br>
 
-      // Drobne wskazówki dostępności
-      // Po otwarciu modala ustaw fokus na polu hasła po krótkim czasie (po animacji)
-      overlay.addEventListener('transitionend', function(){
-        if(overlay.classList.contains('show')){
-          setTimeout(()=> passwordInput.focus(), 700);
-        }
-      });
-    })();
-  </script>
+<div class="system">
+Fragment raportu:
+
+<br><br>
+
+Świadkowie zgłaszali obecność nieznanej osoby
+w pobliżu miejsca zdarzenia około godziny 02:17.
+
+<br><br>
+
+Zabezpieczone materiały wskazują na możliwy związek
+z wcześniejszymi sprawami prowadzonymi przez WSN.
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+WSN ARCHIVE SYSTEM  
+Dostęp tylko dla uprawnionych użytkowników
+
+</footer>
+
+<script>
+
+function searchCase(){
+
+const input=document.getElementById("caseInput").value
+const status=document.getElementById("searchStatus")
+const secret=document.getElementById("secretCase")
+
+status.innerHTML="Wyszukiwanie..."
+
+setTimeout(()=>{
+
+if(input==="59427"){
+
+status.innerHTML="DOSTĘP DO ARCHIWUM PRZYZNANY"
+status.classList.add("glitch")
+
+secret.classList.remove("hidden")
+
+}else{
+
+status.innerHTML="Nie znaleziono sprawy."
+
+}
+
+},800)
+
+}
+
+</script>
+
 </body>
 </html>
